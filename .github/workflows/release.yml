@@ -39,4 +39,5 @@ jobs:
         run: |
           yarn install
           yarn test:ci
+          yarn build
           yarn release
