@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/compare/v1.0.1...v1.0.2) (2025-02-07)
+
+
+### Bug Fixes
+
+* **devops:** Ensure the app is build before release ([e94c913](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/commit/e94c913171a7c024f4a41a31627a9105b7c699be))
+
 ## [1.0.1](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/compare/v1.0.0...v1.0.1) (2025-02-07)
 
 
