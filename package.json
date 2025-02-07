@@ -20,12 +20,12 @@
     "url": "https://github.com/tpz-dsp3-ui-kit/issues"
   },
   "main": "dist/ui-kit.umd.js",
-  "module": "dist/ui-kit.mjs",
+  "module": "dist/ui-kit.es.js",
   "types": "dist/ui-kit.d.ts",
   "exports": {
     ".": {
       "types": "./dist/ui-kit.d.ts",
-      "import": "./dist/ui-kit.mjs",
+      "import": "./dist/ui-kit.es.js",
       "require": "./dist/ui-kit.umd.js"
     },
     "./dist/style.css": "./dist/style.css"

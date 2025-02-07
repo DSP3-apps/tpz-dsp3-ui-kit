@@ -3,7 +3,7 @@
     "lib": [
       "dom",
       "dom.iterable",
-      "esnext"
+      "ES2020"
     ],
     "allowJs": true,
     "skipLibCheck": true,
@@ -14,7 +14,8 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "declaration": true,
+    "jsx": "react-jsx",
     "incremental": true,
     "useDefineForClassFields": true,
     "composite": true,
@@ -22,11 +23,13 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
+    "baseUrl": "./",
     "paths": {
       "@/*": [
         "./src/*"
       ]
     },
+    "outDir": "./dist",
     "types": [
       "vitest/globals",
       "@testing-library/jest-dom"
@@ -34,7 +37,6 @@
   },
   "include": [
     "src",
-    "vite.config.ts",
   ],
   "exclude": [
     "node_modules",
