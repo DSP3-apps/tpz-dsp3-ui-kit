@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/compare/v1.0.2...v1.1.0) (2025-02-09)
+
+
+### Features
+
+* **project:** Refactor config files ([c148276](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/commit/c148276e11387069754caf3247db251f116b7726))
+
 ## [1.0.2](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/compare/v1.0.1...v1.0.2) (2025-02-07)
 
 
