@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/compare/v1.1.0...v1.1.1) (2025-02-10)
+
+
+### Bug Fixes
+
+* **linting:** Update Eslint configs ([e3f5235](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/commit/e3f5235e3670f8450d8a386b8fe50ff32a67f952))
+
 # [1.1.0](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/compare/v1.0.2...v1.1.0) (2025-02-09)
 
 

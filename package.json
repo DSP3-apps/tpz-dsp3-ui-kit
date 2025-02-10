@@ -1,6 +1,6 @@
 {
   "name": "@tpzdsp/tpz-dsp3-ui-kit",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A library template built by Vite, React, Typescript, TailwindCSS and Storybook",
   "type": "module",
   "private": false,
