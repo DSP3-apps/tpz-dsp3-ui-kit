@@ -3307,10 +3307,10 @@
   resolved "https://registry.yarnpkg.com/@testing-library/user-event/-/user-event-14.6.1.tgz#13e09a32d7a8b7060fe38304788ebf4197cd2149"
   integrity sha512-vq7fv0rnt+QTXgPxr5Hjc210p6YKq2kmdziLgnsZGgLJ9e6VAShx1pACLuRjd/AS/sr7phAR58OIIpf0LlmQNw==
 
-"@tpzdsp/eslint-config-dsp@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@tpzdsp/eslint-config-dsp/-/eslint-config-dsp-1.2.0.tgz#1b7144670f25300d2da5176ada91284b8f1b7574"
-  integrity sha512-7josZfci4n4jAmadjLy77j4xYpvxx9FmWM/svDGC3gKM526Fr6LcpHX6nhVlZ2zshTAVx3iWhqw5g0QrCYnT4g==
+"@tpzdsp/eslint-config-dsp@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@tpzdsp/eslint-config-dsp/-/eslint-config-dsp-1.2.2.tgz#27f72d42d773609728e27cdaabd234fd6e86f9ed"
+  integrity sha512-5DZN3kHr+nlxL7cYIt8Ne8yVEtvrDxp59OZrYlDc81PYOxCseA/NWSE0ihOtddSuDKqbX5CllWe5voKP3C9/XA==
 
 "@tufjs/canonical-json@2.0.0":
   version "2.0.0"
