@@ -6,6 +6,7 @@
     - [To publish the package on Gitlab Package Registry, follow these steps:](#to-publish-the-package-on-gitlab-package-registry-follow-these-steps)
     - [To publish the package on Github Package Registry, follow these steps:](#to-publish-the-package-on-github-package-registry-follow-these-steps)
   - [✔️ Installing the package](#️-installing-the-package)
+  - [Local Development](#local-development)
 
 
 ## Developing components
@@ -90,3 +91,9 @@ content: [
 5. Use the component: `<Button color="blue" > Click me! </Button>`.
 
 <br>
+
+## Local Development
+
+1. In this repo build your latest changes: `yarn build`
+2. In this repo Publish your latest changes: `yalc publish`
+3. In the app repo, install package (this needs done on each change): `yalc add -D @tpzdsp/tpz-dsp3-ui-kit`
