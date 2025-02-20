@@ -40,11 +40,11 @@
     "storybook": "storybook dev -p 6006",
     "lint": "eslint ./src/**/*.{js,ts,tsx}",
     "lint:fix": "eslint ./src/**/*.{js,ts,tsx} --fix",
+    "lint:rules": "eslint --print-config ./eslint.config.js > rules.json",
     "format:fix": "prettier --write ./src/**/*.{js,ts,tsx}",
     "test": "vitest",
     "test:ci": "vitest run",
     "test:e2e": "yarn playwright test",
-    "lint:rules": "eslint --print-config ./eslint.config.js > rules.json",
     "postinstall": "npx husky install .husky",
     "release": "semantic-release"
   },
