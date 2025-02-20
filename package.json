@@ -41,6 +41,7 @@
     "lint": "eslint ./src/**/*.{js,ts,tsx}",
     "lint:fix": "eslint ./src/**/*.{js,ts,tsx} --fix",
     "lint:rules": "eslint --print-config ./eslint.config.js > rules.json",
+    "lint:inspect": "npx @eslint/config-inspector@latest",
     "format:fix": "prettier --write ./src/**/*.{js,ts,tsx}",
     "test": "vitest",
     "test:ci": "vitest run",
