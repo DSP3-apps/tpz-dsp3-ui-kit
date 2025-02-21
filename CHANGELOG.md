@@ -1,3 +1,23 @@
+# [1.2.0](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/compare/v1.1.2...v1.2.0) (2025-02-21)
+
+
+### Bug Fixes
+
+* **docs:** Add section on local development ([6a4219e](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/commit/6a4219ee3708fa8770492f218e0c792dd7cd5637))
+* **linting:** Add ability to inspect ESlint setup ([487d2a7](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/commit/487d2a74243d9f7e1604aae92c1ac21ca35ebd3c))
+* **linting:** Remove rule already defined ([594d952](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/commit/594d9523c065cb7ecc5d111dafcde04779a592c5))
+* **linting:** Update version of config files ([3b73902](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/commit/3b7390266aaa0e5425ce79cfe070dc978e78d677))
+* **project:** Keep ESLint scripts together ([694aeaa](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/commit/694aeaa4e4353375a80669812bc070223c28dfbd))
+* **project:** Rename file to avoid typescript type issues ([6a7d640](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/commit/6a7d64094b9291dcc03e4413a62380b30f0820e7))
+* **project:** Update files to include ([20b2a46](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/commit/20b2a46e276b302a0080fd5e3061f7dc804fef39))
+
+
+### Features
+
+* **components:** Add Card component ([a513e72](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/commit/a513e72edcb92b19e45a2990e968931ac543159b))
+* **components:** Add Heading component ([adfc684](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/commit/adfc6841d1431659df9d47929d3160239468b419))
+* **components:** Add Paragraph component ([2203632](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/commit/220363230322027e9c3bd9cea379d3bf47862a11))
+
 ## [1.1.2](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/compare/v1.1.1...v1.1.2) (2025-02-10)
 
 
