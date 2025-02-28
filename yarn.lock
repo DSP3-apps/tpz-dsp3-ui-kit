@@ -3307,10 +3307,10 @@
   resolved "https://registry.yarnpkg.com/@testing-library/user-event/-/user-event-14.6.1.tgz#13e09a32d7a8b7060fe38304788ebf4197cd2149"
   integrity sha512-vq7fv0rnt+QTXgPxr5Hjc210p6YKq2kmdziLgnsZGgLJ9e6VAShx1pACLuRjd/AS/sr7phAR58OIIpf0LlmQNw==
 
-"@tpzdsp/eslint-config-dsp@^1.2.4":
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/@tpzdsp/eslint-config-dsp/-/eslint-config-dsp-1.2.4.tgz#fd2c75624f7d0704179f05349146d24859831e0f"
-  integrity sha512-MHaQjDlbVlNa3BAyg/97BaDyXOI3BwxqcFXEV54rnrc9v2+4KmuLEUB1oyWecpirzKr884AE8MIXhXDP1NaNTQ==
+"@tpzdsp/eslint-config-dsp@^1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@tpzdsp/eslint-config-dsp/-/eslint-config-dsp-1.3.0.tgz#e3c003b452230b0fc93ad98135f3abd58a0b009a"
+  integrity sha512-7Kty8pobKJSWqQkP+z28iDnfYELJD5ywjN596Mxh2Fan6u6KPDdfhJndNQ65MyPzmltd8LUIY6DrPIHPOA+5SA==
 
 "@tufjs/canonical-json@2.0.0":
   version "2.0.0"
@@ -9529,6 +9529,11 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
+prettier-plugin-classnames@^0.7.6:
+  version "0.7.6"
+  resolved "https://registry.yarnpkg.com/prettier-plugin-classnames/-/prettier-plugin-classnames-0.7.6.tgz#20cb26e069260d1835a3a0d9572d25be82a9873f"
+  integrity sha512-sBBnS0VK/gXwtSbsgK5bB5kdtGRWn+hZVBoV/GqLKK6vJGlECmDck/ilqEUCmk7KTGZpRsxIFMW6DXn6OJHAng==
+
 prettier-plugin-tailwindcss@^0.6.5:
   version "0.6.11"
   resolved "https://registry.yarnpkg.com/prettier-plugin-tailwindcss/-/prettier-plugin-tailwindcss-0.6.11.tgz#cfacd60c4f81997353ee913e589037f796df0f5f"
@@ -9816,6 +9821,11 @@ react-element-to-jsx-string@^15.0.0:
     "@base2/pretty-print-object" "1.0.1"
     is-plain-object "5.0.0"
     react-is "18.1.0"
+
+react-icons@^5.4.0:
+  version "5.5.0"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-5.5.0.tgz#8aa25d3543ff84231685d3331164c00299cdfaf2"
+  integrity sha512-MEFcXdkP3dLo8uumGI5xN3lDFNsRtrjbOEKDLD7yv76v4wpnEq2Lt2qeHaQOr34I/wPN3s3+N08WkQ+CW37Xiw==
 
 react-is@18.1.0:
   version "18.1.0"
@@ -10993,6 +11003,11 @@ synckit@^0.9.1:
   dependencies:
     "@pkgr/core" "^0.1.0"
     tslib "^2.6.2"
+
+tailwind-merge@2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/tailwind-merge/-/tailwind-merge-2.6.0.tgz#ac5fb7e227910c038d458f396b7400d93a3142d5"
+  integrity sha512-P+Vu1qXfzediirmHOC3xKGAYeZtPcV9g76X+xg2FD4tYgR71ewMA35Y3sCz3zhiN/dwefRpJX0yBcgwi1fXNQA==
 
 tailwindcss@^3.4.1:
   version "3.4.17"
