@@ -7,6 +7,15 @@
     - [To publish the package on Github Package Registry, follow these steps:](#to-publish-the-package-on-github-package-registry-follow-these-steps)
   - [✔️ Installing the package](#️-installing-the-package)
   - [Local Development](#local-development)
+- [Styling](#styling)
+  - [Colours](#colours)
+    - [States](#states)
+      - [Focus](#focus)
+      - [Hover / Active](#hover--active)
+  - [Text \& Font](#text--font)
+    - [Text Size](#text-size)
+  - [Breakpoints](#breakpoints)
+  - [Notes](#notes)
 
 
 ## Developing components
@@ -97,3 +106,79 @@ content: [
 1. In this repo build your latest changes: `yarn build`
 2. In this repo Publish your latest changes: `yalc publish`
 3. In the app repo, install package (this needs done on each change): `yalc add -D @tpzdsp/tpz-dsp3-ui-kit`
+
+# Styling
+
+The Tailwind config has been designed to be a mixture of modern Tailwind practices and naming and GDS names for consistency and semantics.
+
+## Colours
+
+The available colours are a reduced palette have been taken from the [GDS colour palette](https://design-system.service.gov.uk/styles/colour/). Each colour has shades `100` to `900` (`900` being the darkest), where `500` is the exact hex code of the colour in the palette. For example, if you need `background: govuk-colour("red")`, that would be `bg-red-500`.
+
+As per the GDS, there are colours that have secondary names that should be used for specific contexts, which are shown below, along side a list of the available colours:
+
+| GDS Name     | Tailwind Name | Contextual Name(s)                                          |
+| ------------ | ------------- | ----------------------------------------------------------- |
+| `white`      | `white`       |                                                             |
+| `black`      | `black`       | `text-primary`, `focus-text`, `border-input`, `link-active` |
+| `red`        | `red-500`     | `error`                                                     |
+| `yellow`     | `yellow`      | `focus`                                                     |
+| `green`      | `green`       | `success`, `brand`, `link`, `link-hover` (`green-600`)      |
+| `orange`     | `orange`      | `warning`                                                   |
+| `dark-grey`  | `gray`        | `text-secondary`                                            |
+| `mid-grey`   | `slate`       | `border`                                                    |
+| `light-grey` | `stone`       |                                                             |
+| `purple`     | `purple`      | `link-visited`                                              |
+
+### States
+
+#### Focus
+
+Any element with focus must have a yellow background and black text, which is achieved with `bg-focus` and `text-focus-text`. Certain components, like buttons, may have a different focus style depending on whether the user is also hovering or interacting with the compoennt, but the focus colour must always be the same.
+
+#### Hover / Active
+
+For hover states, the colour of the element should darken **one shade**. For example, `bg-green-500 hover:bg-green-600`.
+Active states will depend on the component. Links should use their respective contextual names, so `link-hover`, `link-active`, etc.
+
+## Text & Font
+
+The `GDS Transport` font file is not included in this repository due to the license, however the font family name is the first one in the font family list so it will attempt to use it if available.
+The font file should be supplied by each project individually.
+
+### Text Size
+
+The sizing is based off of the [GDS modern typography scale](https://design-system.service.gov.uk/styles/type-scale/). The names of the font sizes have been altered:
+
+| GovUK Name       | Tailwind Name |
+| ---------------- | ------------- |
+| 16               | `base`        |
+| 19               | `lg`          |
+| 24               | `xl`          |
+| 27 (rarely used) | `2xl`         |
+| 36               | `3xl`         |
+| 48               | `4xl`         |
+| 80 (rarely used) | `5xl`         |
+
+The default `text-...` class name is automatically responsive, based on the 2 differrent font size tables provided by the GDS for small or large screens. This means writing `text-xl`, for example, will apply the font size for small screens, and optionally, if the screen is large enough, the size for large screens. You should not need to write responsive font size classes for this reason.
+
+If you need a font size that is *not* responsive, you can use the static names. For example, `text-static-xl` will apply the small screen point 24 font size and it will not change (`text-static-lg-xl` would be large screen).
+
+## Breakpoints
+
+There are 4 breakpoints which map exactly to the `govuk-frontend`:
+
+| GovUK Name | Tailwind Name | Size   |
+| ---------- | ------------- | ------ |
+| `mobile`   | `xs`          | 320px  |
+| `tablet`   | `sm`          | 740px  |
+| `desktop`  | `md`          | 980px  |
+| `wide`     | `lg`          | 1300px |
+
+## Notes
+
+There are a few utility variants defined in the Tailwind config:
+
+- `focus-idle:`: used when the element is focussed but not active or being hovered
+- `hover-enabled:`: used when an element is hovered, but the element is not disabled
+- `active-enabled`: same as above, but for if the element is active
