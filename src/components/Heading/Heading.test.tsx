@@ -17,6 +17,6 @@ describe('Heading Component', () => {
     render(<Heading type={type}>Styled {type}</Heading>);
 
     const heading = screen.getByText(`Styled ${type}`);
-    expect(heading).toHaveClass('font-bold text-govukBlack');
+    expect(heading).toHaveClass('font-bold text-text-primary');
   });
 });

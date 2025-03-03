@@ -3,5 +3,5 @@ export type ParagraphProps = {
 };
 
 export const Paragraph = ({ children }: ParagraphProps) => {
-  return <p className="pb-4 text-sm text-govukBlack">{children}</p>;
+  return <p className="pb-4 text-sm text-text-primary">{children}</p>;
 };

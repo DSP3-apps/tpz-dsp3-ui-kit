@@ -34,3 +34,8 @@ coverage
 
 # Typescript
 tsconfig.tsbuildinfo
+
+# Yalc
+.yalc/*
+yalc.lock
+

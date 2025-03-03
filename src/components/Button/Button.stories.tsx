@@ -1,28 +1,36 @@
-import { Meta, StoryFn } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
+import { Meta, StoryObj } from '@storybook/react';
 
-import { Button, ButtonProps } from './Button';
+import { Button } from './Button';
 
 export default {
   children: 'Button',
   component: Button,
 } as Meta;
 
-const Template: StoryFn<ButtonProps> = (args) => <Button {...args} />;
-
-export const Primary = Template.bind({});
-Primary.args = {
-  color: 'blue',
-  children: 'Click me',
-};
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-  color: 'red',
-  children: 'Click me',
-};
-
-export const Tertiary = Template.bind({});
-Tertiary.args = {
-  color: 'green',
-  children: 'Click me',
+export const AllButtons: StoryObj<typeof Button> = {
+  render: () => (
+    <div className="flex flex-col gap-4">
+      <div>
+        <Button type="primary" onClick={action('primary-click')}>
+          Primary
+        </Button>
+      </div>
+      <div>
+        <Button type="secondary" onClick={action('secondary-click')}>
+          Secondary
+        </Button>
+      </div>
+      <div className="p-4 bg-brand">
+        <Button type="inverse" onClick={action('inverse-click')}>
+          Inverse
+        </Button>
+      </div>
+      <div>
+        <Button type="primary" disabled>
+          Disabled Button
+        </Button>
+      </div>
+    </div>
+  ),
 };

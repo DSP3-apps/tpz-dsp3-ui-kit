@@ -4,34 +4,43 @@ import { describe, expect, it } from 'vitest';
 import { Button } from './Button';
 
 describe('Button', () => {
-  it('renders with default color blue', () => {
-    render(<Button>Click me</Button>);
-
+  it('renders with primary style', () => {
+    render(<Button type="primary">Primary</Button>);
     const button = screen.getByRole('button');
-    expect(button).toHaveClass('bg-govukBlue');
-    expect(button).toHaveTextContent('Click me');
+    expect(button).toHaveClass('bg-brand');
+    expect(button).toHaveTextContent('Primary');
   });
-
-  it('renders with red color when color is "red"', () => {
-    render(<Button color="red">Click me</Button>);
-
+  it('renders with secondary style', () => {
+    render(<Button type="secondary">Secondary</Button>);
     const button = screen.getByRole('button');
-    expect(button).toHaveClass('bg-govukRed');
-    expect(button).toHaveTextContent('Click me');
+    expect(button).toHaveClass('bg-slate-100');
+    expect(button).toHaveTextContent('Secondary');
   });
-
-  it('renders with green color when color is "green"', () => {
-    render(<Button color="green">Click me</Button>);
-
+  it('renders with inverse style', () => {
+    render(<Button type="inverse">Inverse</Button>);
     const button = screen.getByRole('button');
-    expect(button).toHaveClass('bg-govukGreen');
-    expect(button).toHaveTextContent('Click me');
+    expect(button).toHaveClass('bg-white');
+    expect(button).toHaveTextContent('Inverse');
   });
-
-  it('renders with correct children content', () => {
-    render(<Button color="green">Submit</Button>);
-
+  it('renders with disabled style', () => {
+    render(
+      <Button type="primary" disabled>
+        Primary Disabled
+      </Button>,
+    );
     const button = screen.getByRole('button');
-    expect(button).toHaveTextContent('Submit');
+    expect(button).toBeDisabled();
+    expect(button).toHaveTextContent('Primary Disabled');
+  });
+  it('renders with custom styles', () => {
+    render(
+      <Button type="primary" className="bg-orange-500">
+        Primary Modified
+      </Button>,
+    );
+    const button = screen.getByRole('button');
+    expect(button).toHaveClass('bg-orange-500');
+    expect(button).not.toHaveClass('bg-green-500');
+    expect(button).toHaveTextContent('Primary Modified');
   });
 });
