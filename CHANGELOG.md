@@ -1,3 +1,16 @@
+# [1.3.0](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/compare/v1.2.0...v1.3.0) (2025-03-04)
+
+
+### Bug Fixes
+
+* **project:** Include yalc in gitignore ([5e06bf4](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/commit/5e06bf4bf35f24f5dceb56b916a3256026c03ea6))
+
+
+### Features
+
+* **deps:** Update outdated dependencies ([a735a48](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/commit/a735a48e953f7c48b0c9116c2b45cfe544b0fe44))
+* **project:** Add button component, update components to use new tailwind config ([bf8adec](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/commit/bf8adece8f2f9aade602f02237b3dde3f9a93f5a))
+
 # [1.2.0](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/compare/v1.1.2...v1.2.0) (2025-02-21)
 
 
