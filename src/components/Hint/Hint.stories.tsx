@@ -11,8 +11,8 @@ export default {
 
 const Template: StoryFn<HintProps> = (args) => <Hint {...args} />;
 
-export const defaultHint = Template.bind({});
-defaultHint.args = {
+export const DefaultHint = Template.bind({});
+DefaultHint.args = {
   children: 'Hint message',
 };
 

@@ -9,8 +9,8 @@ export default {
 
 const Template: StoryFn<ErrorTextProps> = (args) => <ErrorText {...args} />;
 
-export const defaultError = Template.bind({});
-defaultError.args = {
+export const DefaultError = Template.bind({});
+DefaultError.args = {
   children: 'Error message',
 };
 
