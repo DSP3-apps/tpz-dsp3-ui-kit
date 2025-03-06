@@ -1520,10 +1520,10 @@
   resolved "https://registry.yarnpkg.com/@testing-library/user-event/-/user-event-14.6.1.tgz#13e09a32d7a8b7060fe38304788ebf4197cd2149"
   integrity sha512-vq7fv0rnt+QTXgPxr5Hjc210p6YKq2kmdziLgnsZGgLJ9e6VAShx1pACLuRjd/AS/sr7phAR58OIIpf0LlmQNw==
 
-"@tpzdsp/eslint-config-dsp@^1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@tpzdsp/eslint-config-dsp/-/eslint-config-dsp-1.4.0.tgz#df7b20c999035991cb9eb28aa53f8c0d4f32e517"
-  integrity sha512-eMSiHv0oaBVIkM1lmhMfsy0rwE2cvxrF86x5+OoDZbxhe9quMcWqngka7e5ihZkQouNj413xVd1zDyd1NNJf0Q==
+"@tpzdsp/eslint-config-dsp@^1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@tpzdsp/eslint-config-dsp/-/eslint-config-dsp-1.5.0.tgz#4c125f6243b442b8324ff4324c12d5117211a2cc"
+  integrity sha512-6FSbTqGE4WVTGx3/nUu7QkHav+JXCHlrYHr6O5tg3M+axoB+eBqPTtr5opybA5uxNh2btr0TGlIGR8ZfV+CpYw==
 
 "@tufjs/canonical-json@2.0.0":
   version "2.0.0"
@@ -3312,9 +3312,9 @@ eslint-plugin-react@^7.37.0, eslint-plugin-react@^7.37.4:
     string.prototype.repeat "^1.0.0"
 
 eslint-plugin-storybook@^0.11.3:
-  version "0.11.3"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-storybook/-/eslint-plugin-storybook-0.11.3.tgz#3a73bc0ba0299a575bb2a5e3cf81e6ae8c1df486"
-  integrity sha512-gDBnBZiyk4ZG7OMSJRaHBcuJ8TMCXgMIQ3HB/XvtN0SvSio2ZOIeYD3yGj39g/DbyCe/Bg02j/ip9tWlDEs82A==
+  version "0.11.4"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-storybook/-/eslint-plugin-storybook-0.11.4.tgz#137a425c20683face8848e692ad6dd7803a69a75"
+  integrity sha512-OvLf1ljpDQ6Y/U2kM7hT5hESn+hg0vq/nh62+YiPFWdRIEjuQM9ivmwoTP9nRBExH8fT2VPqM5t/RB68lqTWJw==
   dependencies:
     "@storybook/csf" "^0.1.11"
     "@typescript-eslint/utils" "^8.8.1"

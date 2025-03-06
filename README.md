@@ -16,6 +16,13 @@
     - [Text Size](#text-size)
   - [Breakpoints](#breakpoints)
   - [Notes](#notes)
+- [Creating Components](#creating-components)
+  - [References](#references)
+  - [Props](#props)
+      - [Class names](#class-names)
+  - [Storybook](#storybook)
+      - [Template Binding (multiple stories)](#template-binding-multiple-stories)
+      - [Single story (all components on a single story)](#single-story-all-components-on-a-single-story)
 
 
 ## Developing components
@@ -182,3 +189,135 @@ There are a few utility variants defined in the Tailwind config:
 - `focus-idle:`: used when the element is focussed but not active or being hovered
 - `hover-enabled:`: used when an element is hovered, but the element is not disabled
 - `active-enabled`: same as above, but for if the element is active
+
+# Creating Components
+
+## References
+
+There are 2 important references to use:
+- [GovUK Design System (GDS)](https://design-system.service.gov.uk/)
+- [GovUK Frontend components](https://github.com/alphagov/govuk-frontend/tree/main/packages/govuk-frontend/src/govuk/components)
+
+The GDS provides both all of the recomended styles, and reason as to why and where they should/shouldn't be used, and examples of all the components in the GovUK frontend components. (Note: The exaple `Components` on the GDS use slightly outdated styles).
+The best reference for creating the component will be from within the GovUK frontend repository directly. This will show what semantic elements are used for each component, how they structure those element and the exact up-to-date styling they used. The styles are in SCSS but can be translated into Tailwind styles.
+This way, designing the components is much easier as the work is mostly done for us when it comes to accessibility, styling, sematically correct elements, etc.
+
+## Props
+
+As we are developing a component library, all components should expose all of their available props so we don't run into issues using the library where we haven't defined a prop we require for a component. For example, we might define the button props as:
+```tsx
+export type ButtonProps = {
+    type: 'primary' | 'secondary' | 'inverse';
+    onClick: () => void;
+    disabled?: boolean;
+    children?: React.ReactNode;
+}
+```
+But what if we wanted to give the button an `id` or `type='submit'` for a form? This would be an issue since those props are missing. It would be a lot of back and forth to add missing props, and that opens is to issues with types, where a prop takes a `string` but we want to pass a `ReactNode` instead.
+
+Instead, we have a utility type called `ExtendProps` which we should use on *every* component to forward all the props of the base element. Usage example:
+```ts
+type Props = {
+    type: 'primary' | 'secondary' | 'inverse';
+}
+
+export type ButtonProps = ExtendProps<'button', Props>;
+```
+`ButtonProps` now inherits all of the props from the `button` element, and we still add our own `type` prop to it. The second generic argument (`Props`) is **optional** and can be excluded if we do not need to add or modify any props of the original element. For example:
+```ts
+export type ParagraphProps = ExtendProps<'p'>;
+```
+In this case, we don't change or add any new props, so we just define the paragraph props to be the existing props of the `p` element.
+
+Lastly, by using this utility type, we *must* make sure to spread the props into the component itself, so the element receives any of the extra props. Usage example:
+```tsx
+export const Button = ({
+    type = 'primary',
+    children,
+    ...props // We must capture the rest of the props.
+}: ButtonProps) => {
+  return (
+    <button
+      className="..."
+      {...props} {/* And we must spread them into the element. */}
+    >
+      {children}
+    </button>
+  );
+};
+```
+
+#### Class names
+
+We want these components to be customisable in specific circumstances, so they should also be able to take custom class names (which will be allowed by default when using the above `ExtendProps`).
+Due to the use of Tailwind, adding extra class names can sometimes cause conflicts and unexpected behaviour, so we have added a library `tailwind-merge` which is used to solve this.
+When you add the `className` prop to your component, it should use the `twMerge` function to merge your class names and the class names optionally provided by the user. For example:
+```tsx
+<div
+    className={twMerge("tailwind classes", className)} {/* `className` is the user provided classes */}
+>
+    {children}
+</div>
+```
+
+## Storybook
+
+We want to try and keep the codebase consistent, so that means sticking to a consistent format to building the components in storybook. There are 2 formats that should be used, based on the situation at hand.
+
+#### Template Binding (multiple stories)
+
+Template binding is used when you want each instance of the component **to have its own story** (this is a subjective choice, but the baseline is that if you think all of the variations of the component **should** be visible at the same time, do not use template bindings).
+The format of template bindings is as follows:
+```tsx
+import { Meta, StoryFn } from '@storybook/react';
+
+export default {
+  children: '<COMPONENT NAME>',
+  component: Component,
+} as Meta;
+
+const Template: StoryFn<ComponentProps> = (args) => <Component {...args} />;
+
+// This is a single story. Try to make the variables names as descriptive possible.
+export const Variant1 = Template.bind({});
+Variant1.args = {
+  // Modify any of the `ComponentProps` props in here
+  children: 'Hello, this is some simple text',
+};
+
+// Another story
+export const Variant2 = Template.bind({});
+Variant1.args = {
+  children: <p>Hello, this is some simple text</p>,
+  color: "red",
+  hasError: true,
+};
+```
+
+#### Single story (all components on a single story)
+
+If template binding was not suitable (such as needing conditional components, etc) instead you should render all variations of the component to a single story. An example of this is in the `Button` component.
+The format of the single story is as follows:
+```tsx
+import { Meta, StoryObj } from '@storybook/react';
+
+export default {
+  children: '<COMPONENT NAME>',
+  component: Component,
+} as Meta;
+
+// `AllComponents` should use the name of the component, for example: `AllButtons` for buttons.
+export const AllComponents: StoryObj<typeof Component> = {
+  // You could have condition rendering in here, for example.
+  render: () => (
+    <div>
+      <Component single={true}/>
+      <Component>
+        <div>Example text</div>
+      </Component>
+    </div>
+  ),
+};
+```
+
+Keeping all stories to these 2 formats will keep the codebase consistent.

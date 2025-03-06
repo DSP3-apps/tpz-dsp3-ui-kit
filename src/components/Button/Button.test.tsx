@@ -10,18 +10,21 @@ describe('Button', () => {
     expect(button).toHaveClass('bg-brand');
     expect(button).toHaveTextContent('Primary');
   });
+
   it('renders with secondary style', () => {
     render(<Button type="secondary">Secondary</Button>);
     const button = screen.getByRole('button');
     expect(button).toHaveClass('bg-slate-100');
     expect(button).toHaveTextContent('Secondary');
   });
+
   it('renders with inverse style', () => {
     render(<Button type="inverse">Inverse</Button>);
     const button = screen.getByRole('button');
     expect(button).toHaveClass('bg-white');
     expect(button).toHaveTextContent('Inverse');
   });
+
   it('renders with disabled style', () => {
     render(
       <Button type="primary" disabled>
@@ -32,6 +35,7 @@ describe('Button', () => {
     expect(button).toBeDisabled();
     expect(button).toHaveTextContent('Primary Disabled');
   });
+
   it('renders with custom styles', () => {
     render(
       <Button type="primary" className="bg-orange-500">
