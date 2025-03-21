@@ -1,10 +1,18 @@
-export type CardProps = {
-  children: React.ReactNode;
-};
+import { twMerge } from 'tailwind-merge';
 
-export const Card = ({ children }: CardProps) => {
+import { ExtendProps } from '@/utils';
+
+export type CardProps = ExtendProps<'article'>;
+
+export const Card = ({ children, className, ...props }: CardProps) => {
   return (
-    <article className="relative my-6 flex w-96 flex-col rounded-lg border border-slate-200 bg-white p-2 shadow-sm">
+    <article
+      className={twMerge(
+        'relative my-2 flex w-full flex-col rounded-lg border border-slate-200 bg-white p-2 shadow-sm',
+        className,
+      )}
+      {...props}
+    >
       {children}
     </article>
   );
