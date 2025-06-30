@@ -29,7 +29,9 @@
       "import": "./dist/ui-kit.es.js",
       "require": "./dist/ui-kit.umd.js"
     },
-    "./dist/style.css": "./dist/style.css"
+    "./assets/fonts/*": "./dist/assets/fonts/*",
+    "./assets/images/*": "./dist/assets/images/*",
+    "./assets/styles/*": "./dist/assets/styles/*"
   },
   "files": [
     "dist"

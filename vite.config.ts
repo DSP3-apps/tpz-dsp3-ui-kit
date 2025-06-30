@@ -1,20 +1,41 @@
 /// <reference types="vitest" />
 /// <reference types="vite/client" />
 
-import path from 'node:path';
-
 import react from '@vitejs/plugin-react';
+import path from 'node:path';
 import tailwindcss from 'tailwindcss';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
+import svgr from 'vite-plugin-svgr';
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), dts({ rollupTypes: true })],
+  plugins: [
+    react(),
+    dts({ rollupTypes: true }),
+    svgr(),
+    viteStaticCopy({
+      targets: [
+        {
+          src: 'src/assets/fonts/**/*',
+          dest: 'assets/fonts',
+        },
+        {
+          src: 'src/assets/images/**/*',
+          dest: 'assets/images',
+        },
+        {
+          src: 'src/assets/styles/**/*',
+          dest: 'assets/styles',
+        },
+      ]
+    }),
+  ],
   css: {
-    postcss: {
-      plugins: [tailwindcss],
-    },
+    postcss: { plugins: [tailwindcss] },
+  },
+  resolve: {
+    alias: { '@': path.resolve(__dirname, './src') },
   },
   build: {
     copyPublicDir: false,
@@ -25,7 +46,9 @@ export default defineConfig({
       fileName: (format) => `ui-kit.${format}.js`,
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'react/jsx-runtime', 'tailwindcss'],
+      external: (id) =>
+        ['react', 'react-dom', 'tailwindcss', 'react/jsx-runtime'].includes(id) ||
+        id.startsWith('next/'),
       output: {
         globals: {
           react: 'React',
@@ -34,8 +57,6 @@ export default defineConfig({
           'react/jsx-runtime': 'jsxRuntime',
         },
       },
-      // sourcemap: true,
-      // emptyOutDir: true,
     },
   },
   test: {

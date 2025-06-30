@@ -5,6 +5,20 @@
 /* classes defined here will always be included in the output css, but that is okay since
 they will always be used */
 
+@font-face {
+  font-family: 'GDSTransport';
+  src: url('../fonts/gds-light-w2-v2.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GDSTransport';
+  src: url('../fonts/gds-bold-w2-v2.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
 /* Button Styles */
 .button {
   --border: theme('borderWidth.form');
