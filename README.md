@@ -30,7 +30,7 @@
 To develop the components, follow these steps:
 
 1. Write your component code in the `src` folder.
-2. Export the component in the `src/main.ts` file.
+2. Export the component in the `src/index.ts` file.
 3. Create a corresponding story file next to the component to showcase it in Storybook.
 4. Run `yarn storybook` to view your developed component live on the Storybook viewer.
 
