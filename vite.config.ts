@@ -9,9 +9,13 @@ import dts from 'vite-plugin-dts';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 import svgr from 'vite-plugin-svgr';
 
+import { preserveUseDirective } from './vite/plugins/preserveUseDirective';
+
 export default defineConfig({
   plugins: [
     react(),
+    preserveUseDirective('use client'),
+    preserveUseDirective('use server'),
     dts({ rollupTypes: true }),
     svgr(),
     viteStaticCopy({
@@ -58,6 +62,9 @@ export default defineConfig({
         },
       },
     },
+    // @ts-expect-error -- Vite doesn’t type this, but it works
+    preserveModules: true,
+    preserveModulesRoot: 'src',
   },
   test: {
     globals: true,
