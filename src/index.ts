@@ -1,11 +1,8 @@
-<<<<<<< Updated upstream
-// import './tailwind.css';
-=======
 // Export types
 export type { Credentials, DecodedJWT, ExtendProps, NavLink } from './utils/types';
 export type { DropdownMenuItem } from './components/dropdown/DropdownMenu';
->>>>>>> Stashed changes
 
+// Export components
 export { Button } from './components/Button/Button';
 export { Card } from './components/Card/Card';
 export { Heading } from './components/Heading/Heading';
