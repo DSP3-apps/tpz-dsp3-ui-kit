@@ -48,7 +48,7 @@
     "test": "vitest",
     "test:ci": "vitest run",
     "test:e2e": "yarn playwright test",
-    "postinstall": "npx husky install .husky",
+    "postinstall": "if [ \"$CI\" != \"true\" ]; then ./postinstall.sh; fi",
     "release": "semantic-release"
   },
   "devDependencies": {
