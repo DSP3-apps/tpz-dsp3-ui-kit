@@ -1,3 +1,33 @@
+# [1.4.0](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/compare/v1.3.0...v1.4.0) (2025-07-04)
+
+
+### Bug Fixes
+
+* **components:** Add role to ErrorText component ([4961e49](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/commit/4961e49ec55374df86a611a4746d4e1e1c4b71af))
+* **components:** Update components after ESLint config update ([d0f868a](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/commit/d0f868a4e064f2fb6e15a8ffe6146ecd92b85278))
+* **docs:** Fix typo where wrong filename specified ([79f44ee](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/commit/79f44ee46efb27159be1240a65c6cf32d7e34398))
+* **project:** Add globals that might be used ([e169d02](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/commit/e169d0230ba75759d4e254c88cadb375d4676c5c))
+* **project:** Add necessary dependencies ([cdb4b39](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/commit/cdb4b39b3a581859492d9eefb60c07987697fa13))
+* **project:** Add types used by header/footer ([b65621b](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/commit/b65621b2963b8fe8157a47057a1139526e0c4708))
+* **project:** Ensure `use client` and `use server` are honoured ([aced7a9](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/commit/aced7a9ef5b8d1e0fac40387b5935a98a2bf4dd6))
+* **project:** Ensure we include src directory for typescript ([4184ca6](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/commit/4184ca662780ed1e343cd6e70405707f32ce9a76))
+* **project:** Update to latest eslint config ([4aeec55](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/commit/4aeec55f5229f0c2c927c1d7c76a94d23a7d2927))
+* **project:** Update to latest Node LTS version ([ab15958](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/commit/ab15958c3c05caced4cbdd96d9705b416276f3e8))
+* **tests:** Add custom [@testing-library](https://github.com/testing-library) renderer ([2a3874b](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/commit/2a3874bd17635ac5a45bd2c2ea3386a5ac99bab0))
+* **types:** Export types so they can be re-used in apps ([f48f50e](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/commit/f48f50e87fdccb464ad46ce4aa5991202a6ca036))
+
+
+### Features
+
+* **assets:** Add ability to export assets for apps to use ([bc16802](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/commit/bc16802b762a03b8788ef2ad27deb670d6c0be17))
+* **components:** Add dropdown/select menu component ([3b8a727](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/commit/3b8a727826fcacc7ceba820c309d536ef5973e1e))
+* **components:** Add link components used in the Header/Footer ([eb9808c](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/commit/eb9808c7cafc41572c58d5e89cac0fa3aa286d89))
+* **components:** Add SVG images as normal react components ([a49ac25](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/commit/a49ac2533ea2ff0db963fb51f990e50a5d8d3564))
+* **frontend:** Create Error message and Hint component. ([98776dd](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/commit/98776dde47df48ddf0b680fd969528b462892a88))
+* **layout:** Add Header/Footer components ([ebc8406](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/commit/ebc840686c6d12324454c0350bcc914fa2b82c89))
+* **project:** Expand README and add settings.json ([590c2a5](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/commit/590c2a536298ab1686f5f0dac3ff64c995c33967))
+* **project:** Run script after dependency installation ([c8a1a4b](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/commit/c8a1a4b276d38585129ef8f14bf6726b6cffd837))
+
 # [1.3.0](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/compare/v1.2.0...v1.3.0) (2025-03-04)
 
 
