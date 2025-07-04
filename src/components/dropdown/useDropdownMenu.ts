@@ -1,4 +1,4 @@
-import { useState, useRef, useId, useEffect, useMemo, HTMLAttributes } from 'react';
+import { useState, useRef, useId, useEffect, useMemo, HTMLAttributes, useCallback } from 'react';
 
 import { ExtendProps } from '@/utils/types';
 
@@ -70,22 +70,28 @@ export const useDropdownMenu = (itemCount: number): DropdownMenuHook => {
   // this is memoified so it only updates when the number of items changes
   const itemRefs: { current: Record<number, HTMLElement | null> } = useMemo(
     () => ({ current: {} }),
-    [itemCount],
+    [],
   );
 
   // use the unique id to determive if a given element is part of the menu
-  const isMenuItem = (element: Element | null): boolean => {
-    return (
-      element?.getAttribute('data-menu') === menuId ||
-      // get the closest element with that id, essentially checking if we are a child somewhere down the line
-      element?.closest(`[data-menu="${menuId}"]`) !== null
-    );
-  };
+  const isMenuItem = useCallback(
+    (element: Element | null): boolean => {
+      return (
+        element?.getAttribute('data-menu') === menuId ||
+        // get the closest element with that id, essentially checking if we are a child somewhere down the line
+        element?.closest(`[data-menu="${menuId}"]`) !== null
+      );
+    },
+    [menuId],
+  );
 
-  const focusItem = (index: number) => {
-    currentFocusIndex.current = index;
-    itemRefs.current[index]?.focus();
-  };
+  const focusItem = useCallback(
+    (index: number) => {
+      currentFocusIndex.current = index;
+      itemRefs.current[index]?.focus();
+    },
+    [itemRefs],
+  );
 
   const selectItem = (index: number) => {
     setSelectedItem(index);
@@ -96,7 +102,7 @@ export const useDropdownMenu = (itemCount: number): DropdownMenuHook => {
     if (isOpen) {
       focusItem(0);
     }
-  }, [isOpen]);
+  }, [focusItem, isOpen]);
 
   useEffect(() => {
     // handles exiting the menu when the `Escape` key is pressed
@@ -135,7 +141,7 @@ export const useDropdownMenu = (itemCount: number): DropdownMenuHook => {
       document.removeEventListener('focus', blurExitMenuHandler);
       document.removeEventListener('pointerup', clickExitMenuHandler);
     };
-  }, []);
+  }, [isMenuItem]);
 
   return {
     isOpen,
@@ -169,6 +175,7 @@ export const useDropdownMenu = (itemCount: number): DropdownMenuHook => {
       },
     },
 
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     itemProps: Array.from({ length: itemCount }, (_, itemIndex) => ({
       key: itemIndex,
 

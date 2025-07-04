@@ -4,14 +4,14 @@ import { ComponentType } from 'react';
 
 import { FaHouse } from 'react-icons/fa6';
 
-import { HeaderAuthClient } from './HeaderAuthClient';
-import { HeaderNavClient } from './HeaderNavClient';
-
 import { DefraLogo } from '@/components/images/DefraLogo';
 import { EaLogo } from '@/components/images/EaLogo';
 import { ExternalLink } from '@/components/links/ExternalLink';
 import { Link } from '@/components/links/Link';
 import { Credentials, NavLink } from '@/utils/types';
+
+import { HeaderAuthClient } from './HeaderAuthClient';
+import { HeaderNavClient } from './HeaderNavClient';
 
 type HeaderProps = {
   credentials: Credentials | null;

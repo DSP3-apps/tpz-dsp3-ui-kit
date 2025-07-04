@@ -28,7 +28,7 @@ export const HeaderNavClient = ({ navLinks }: HeaderNavClientProps) => {
         <DropdownMenu
           items={navLinks}
           itemRenderer={NavItem}
-          itemClassName="text-black cursor-pointer px-2 py-1 gap-1 text-base flex items-center shrink-0" 
+          itemClassName="text-black cursor-pointer px-2 py-1 gap-1 text-base flex items-center shrink-0"
         />
       </nav>
 

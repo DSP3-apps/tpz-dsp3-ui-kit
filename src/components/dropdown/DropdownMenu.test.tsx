@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest';
 
-import { DropdownMenu, DropdownMenuItem, DrowndownMenuButton } from './DropdownMenu';
-
 import { render, screen, userEvent, waitFor } from '@/utils/renderers';
+
+import { DropdownMenu, DropdownMenuItem, DrowndownMenuButton } from './DropdownMenu';
 
 type Item = { label: string };
 
