@@ -29,7 +29,9 @@
       "import": "./dist/ui-kit.es.js",
       "require": "./dist/ui-kit.umd.js"
     },
-    "./dist/style.css": "./dist/style.css"
+    "./assets/fonts/*": "./dist/assets/fonts/*",
+    "./assets/images/*": "./dist/assets/images/*",
+    "./assets/styles/*": "./dist/assets/styles/*"
   },
   "files": [
     "dist"
@@ -46,7 +48,7 @@
     "test": "vitest",
     "test:ci": "vitest run",
     "test:e2e": "yarn playwright test",
-    "postinstall": "npx husky install .husky",
+    "postinstall": "if [ \"$CI\" != \"true\" ]; then ./postinstall.sh; fi",
     "release": "semantic-release"
   },
   "devDependencies": {
@@ -67,7 +69,7 @@
     "@testing-library/jest-dom": "^6.4.6",
     "@testing-library/react": "^16.0.0",
     "@testing-library/user-event": "^14.5.2",
-    "@tpzdsp/eslint-config-dsp": "^1.5.0",
+    "@tpzdsp/eslint-config-dsp": "^1.8.3",
     "@types/node": "^22.13.1",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
@@ -92,8 +94,10 @@
     "eslint-plugin-storybook": "^0.11.3",
     "eslint-plugin-tailwindcss": "^3.17.4",
     "eslint-plugin-testing-library": "^7.1.1",
+    "globals": "^16.3.0",
     "husky": "^9.0.11",
     "jsdom": "^26.0.0",
+    "next": "^15.1.7",
     "postcss": "^8.4.31",
     "prettier": "^3.3.2",
     "prettier-plugin-classnames": "^0.7.6",
@@ -106,9 +110,12 @@
     "typescript": "^5.8.2",
     "vite": "^6.2.0",
     "vite-plugin-dts": "^4.5.3",
+    "vite-plugin-static-copy": "^3.1.0",
+    "vite-plugin-svgr": "^4.3.0",
     "vitest": "^3.0.7"
   },
   "peerDependencies": {
+    "next": "^15.1.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tailwindcss": "^3.4.1"
@@ -118,6 +125,7 @@
   },
   "dependencies": {
     "react-icons": "^5.4.0",
-    "tailwind-merge": "2.6.0"
+    "server-only": "^0.0.1",
+    "tailwind-merge": "^3.3.1"
   }
 }

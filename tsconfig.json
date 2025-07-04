@@ -32,12 +32,10 @@
     "outDir": "./dist",
     "types": [
       "vitest/globals",
-      "@testing-library/jest-dom"
-    ]
+      "@testing-library/jest-dom",
+    ],
   },
-  "include": [
-    "./",
-  ],
+  "include": ["src"],
   "exclude": [
     "node_modules",
   ]
