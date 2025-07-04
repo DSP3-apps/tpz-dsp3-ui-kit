@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/compare/v1.4.0...v1.4.1) (2025-07-04)
+
+
+### Bug Fixes
+
+* **project:** Remove postinstall lifecycle hook ([4e0b0ca](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/commit/4e0b0ca802c896e38e6a9837194ed2fbd7e364a8))
+
 # [1.4.0](https://github.com/DSP3-apps/tpz-dsp3-ui-kit/compare/v1.3.0...v1.4.0) (2025-07-04)
 
 
